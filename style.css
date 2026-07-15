@@ -333,4 +333,69 @@
 
 
 
+    /* Something Missing Section */
+.missing-section {
+  padding: 60px 32px;
+}
+
+.missing-box {
+  max-width: 1080px;
+  margin: 0 auto;
+  min-height: 460px;
+  background-color: #ece9fe;
+  border: 3px dashed #7c5cfc;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.missing-box h2 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #6d28d9;
+}
+
+.missing-box p {
+  font-size: 22px;
+  font-weight: 600;
+  color: #a78bfa;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #0f172a;
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+
+
 
