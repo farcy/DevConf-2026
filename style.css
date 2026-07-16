@@ -399,3 +399,159 @@
 
 
 
+
+/* ============================================================
+   DevConf 2026 — About section (colorful)
+   HTML + external CSS only. Brand violet extended into a
+   coordinated violet / blue / pink palette for some color.
+   ============================================================ */
+
+:root {
+  /* Brand + supporting accents */
+  --violet:   #7c3aed;
+  --blue:     #2563eb;
+  --pink:     #ec4899;
+
+  --navy:     #0d1b2a;   /* headings   */
+  --ink:      #111827;
+  --text:     #374151;   /* body copy  */
+  --muted:    #6b7280;   /* labels     */
+  --surface:  #ffffff;
+
+  --shadow:   0 1px 2px rgba(13, 27, 42, .04),
+              0 18px 40px rgba(124, 58, 237, .10);
+  --ease:     cubic-bezier(.4, 0, .2, 1);
+}
+
+.about, .about * { box-sizing: border-box; }
+
+.about {
+  position: relative;
+  isolation: isolate;              /* keep the glow behind content */
+  overflow: hidden;
+  padding: 96px 24px;
+  font-family: "Inter", "Arimo", Arial, Helvetica, sans-serif;
+  color: var(--text);
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  /* Soft two-tone wash so the section reads colorful but stays light */
+  background:
+    radial-gradient(60% 60% at 15% 0%,  rgba(124, 58, 237, .12), transparent 70%),
+    radial-gradient(55% 55% at 90% 20%, rgba(37, 99, 235, .10),  transparent 70%),
+    radial-gradient(50% 60% at 70% 100%, rgba(236, 72, 153, .08), transparent 70%),
+    #ffffff;
+}
+
+.about-container { max-width: 760px; margin: 0 auto; }
+
+/* Pill-style eyebrow with a tinted background */
+.about-eyebrow {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, .10);
+  border: 1px solid rgba(124, 58, 237, .20);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--violet);
+}
+
+/* Gradient-clipped heading */
+.about-heading {
+  margin: 0 0 18px;
+  font-size: clamp(30px, 4.8vw, 46px);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  background: linear-gradient(115deg, var(--violet) 0%, var(--blue) 55%, var(--pink) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.about-lead {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ---------- Colored stat cards ---------- */
+
+.about-points {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-point {
+  flex: 1 1 200px;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 26px 22px;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid #edeaf6;
+  box-shadow: var(--shadow);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+
+/* Colored top accent bar per card */
+.about-point { position: relative; overflow: hidden; }
+.about-point::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+}
+
+.about-point__value {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+.about-point__label { font-size: 14px; color: var(--muted); }
+
+/* Per-card color themes */
+.about-point--violet::before { background: var(--violet); }
+.about-point--violet .about-point__value { color: var(--violet); }
+
+.about-point--blue::before { background: var(--blue); }
+.about-point--blue .about-point__value { color: var(--blue); }
+
+.about-point--pink::before { background: var(--pink); }
+.about-point--pink .about-point__value { color: var(--pink); }
+
+/* Gentle hover lift */
+.about-point:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 2px rgba(13, 27, 42, .05),
+              0 24px 50px rgba(124, 58, 237, .16);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 560px) {
+  .about { padding: 68px 18px; }
+  .about-lead { font-size: 16px; }
+  .about-point { max-width: 100%; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .about-point { transition: none; }
+}
+
+
+
+
